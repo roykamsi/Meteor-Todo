@@ -1,0 +1,55 @@
+<body>
+    {{> mainContainer }}
+</body>
+
+<template name="mainContainer">
+    <div class="app">
+
+        <header>
+            {{#if isUserLogged}}
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="user">
+                    Benvenuto {{getUser.username}}
+                </h3>
+                <button class="user-logout p-1">Logout</button>
+            </div>
+            {{/if}}
+            <div class="app-bar">
+                <div class="app-header">
+                    <h1>To Do List {{incompleteCount}}</h1>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+            {{#if isUserLogged}}
+            <div class="form-wrapper">{{> form}}</div>
+            <div class="filter">
+                <button id="hide-completed-button" class="p-1">
+                    {{#if hideCompleted}}
+                    Mostra tutte
+                    {{else}}
+                    Nascondi complete
+                    {{/if}}
+                </button>
+            </div>
+
+
+            <ul>
+                {{#each tasks}}
+                {{> task}}
+                {{/each}}
+            </ul>
+            {{ else }}
+            {{> login }}
+            {{/if}}
+        </div>
+    </div>
+</template>
+
+<template name="form">
+    <form class="task-form">
+        <input type="text" name="text" placeholder="Inserisci una nuova task" class="p-1">
+        <button type="submit" class="p-1">Aggiungi task</button>
+    </form>
+</template>

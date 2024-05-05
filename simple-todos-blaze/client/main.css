@@ -1,0 +1,114 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+p, span, button {
+  font-size: 1rem;
+}
+
+.app {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-inline-start: 0;
+}
+
+ul li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+}
+
+button.delete {
+  margin-left: auto;
+  background-color: darkred;
+  color: #fff;
+}
+
+.filter {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+/* LOGIN FORM */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form > div {
+  margin: 8px;
+}
+
+.login-form > div > label {
+  font-weight: bold;
+}
+
+.login-form > div  > input {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 10px 6px;
+  background: transparent;
+  border: 1px solid #aaa;
+  width: 100%;
+  font-size: 1em;
+  margin-right: 16px;
+  margin-top: 4px;
+}
+
+.login-form > div > input:focus {
+  outline: 0;
+}
+
+.login-form > div > button {
+  color: white;
+  font-weight: bolder;
+  background-color: #62807e;
+  padding: 1rem;
+}
+
+.task-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.task-form input {
+  width: 100%;
+}
+/* UTILS */
+
+.d-flex {
+  display: flex;
+} 
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+.p-1 {
+  padding: 1rem;
+}
